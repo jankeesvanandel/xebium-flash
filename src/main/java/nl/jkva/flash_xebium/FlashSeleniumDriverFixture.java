@@ -1,4 +1,4 @@
-package nl.malmberg.flash_xebium;
+package nl.jkva.flash_xebium;
 
 import com.thoughtworks.selenium.CommandProcessor;
 import com.thoughtworks.selenium.webdriven.SeleneseCommand;
@@ -6,7 +6,7 @@ import com.thoughtworks.selenium.webdriven.WebDriverCommandProcessor;
 import com.xebia.incubator.xebium.AssertionAndStopTestError;
 import com.xebia.incubator.xebium.ExtendedSeleniumCommand;
 import com.xebia.incubator.xebium.SeleniumDriverFixture;
-import nl.malmberg.flash_xebium.commands.*;
+import nl.jkva.flash_xebium.commands.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

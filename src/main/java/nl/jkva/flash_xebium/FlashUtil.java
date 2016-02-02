@@ -1,9 +1,9 @@
-package nl.malmberg.flash_xebium;
+package nl.jkva.flash_xebium;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-public class BapsUtil {
+public class FlashUtil {
     public static void setFinalStatic(Field field, Object newValue) throws Exception {
         field.setAccessible(true);
 

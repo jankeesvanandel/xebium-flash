@@ -1,4 +1,4 @@
-package nl.malmberg.flash_xebium.commands;
+package nl.jkva.flash_xebium.commands;
 
 import com.thoughtworks.selenium.webdriven.SeleneseCommand;
 import org.openqa.selenium.JavascriptExecutor;

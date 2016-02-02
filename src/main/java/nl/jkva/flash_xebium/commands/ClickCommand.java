@@ -1,4 +1,4 @@
-package nl.malmberg.flash_xebium.commands;
+package nl.jkva.flash_xebium.commands;
 
 @Deprecated
 public class ClickCommand extends BaseFlashCommand {

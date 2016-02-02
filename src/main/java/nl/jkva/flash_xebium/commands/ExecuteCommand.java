@@ -1,7 +1,7 @@
-package nl.malmberg.flash_xebium.commands;
+package nl.jkva.flash_xebium.commands;
 
 @Deprecated
-public class NameStartWithClickCommand extends BaseFlashCommand {
+public class ExecuteCommand extends BaseFlashCommand {
     @Override
     protected String getScript(String locator, String value) {
         throw new UnsupportedOperationException("Not yet supported");
