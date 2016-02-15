@@ -1,21 +1,37 @@
 package nl.jkva.flash_xebium;
 
-import com.thoughtworks.selenium.CommandProcessor;
-import com.thoughtworks.selenium.webdriven.SeleneseCommand;
-import com.thoughtworks.selenium.webdriven.WebDriverCommandProcessor;
-import com.xebia.incubator.xebium.AssertionAndStopTestError;
-import com.xebia.incubator.xebium.ExtendedSeleniumCommand;
-import com.xebia.incubator.xebium.SeleniumDriverFixture;
-import nl.jkva.flash_xebium.commands.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import nl.jkva.flash_xebium.commands.ClickByIdCommand;
+import nl.jkva.flash_xebium.commands.ClickByNameCommand;
+import nl.jkva.flash_xebium.commands.ClickCommand;
+import nl.jkva.flash_xebium.commands.DragAndDropCommand;
+import nl.jkva.flash_xebium.commands.EnterTextCommand;
+import nl.jkva.flash_xebium.commands.ExecuteCommand;
+import nl.jkva.flash_xebium.commands.FlashObjectIdListCommand;
+import nl.jkva.flash_xebium.commands.GetFlashObjectIdCommand;
+import nl.jkva.flash_xebium.commands.NameStartWithClickCommand;
+import nl.jkva.flash_xebium.commands.OutputErrorsCommand;
+import nl.jkva.flash_xebium.commands.SetFlashObjectIdCommand;
+import nl.jkva.flash_xebium.commands.ShowObjectsCommand;
+import nl.jkva.flash_xebium.commands.StoreFlashObjectPresentCommand;
+import nl.jkva.flash_xebium.commands.VerifyFlashObjectPresentCommand;
+import nl.jkva.flash_xebium.commands.VerifyTextCommand;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.thoughtworks.selenium.CommandProcessor;
+import com.thoughtworks.selenium.webdriven.SeleneseCommand;
+import com.thoughtworks.selenium.webdriven.WebDriverCommandProcessor;
+import com.xebia.incubator.xebium.AssertionAndStopTestError;
+import com.xebia.incubator.xebium.ExtendedSeleniumCommand;
+import com.xebia.incubator.xebium.SeleniumDriverFixture;
 
 public class FlashSeleniumDriverFixture extends SeleniumDriverFixture {
 
@@ -38,7 +54,7 @@ public class FlashSeleniumDriverFixture extends SeleniumDriverFixture {
         FLASH_COMMANDS.put("verifyText", new VerifyTextCommand());
         FLASH_COMMANDS.put("clickById", new ClickByIdCommand());
         FLASH_COMMANDS.put("command", new ExecuteCommand());
-//        FLASH_COMMANDS.put("flashObjNameStartWithClick", new NameStartWithClickCommand());
+        FLASH_COMMANDS.put("flashObjNameStartWithClick", new NameStartWithClickCommand());
     }
 
     // Initialized together

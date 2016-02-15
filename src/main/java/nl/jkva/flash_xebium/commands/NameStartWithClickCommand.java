@@ -1,9 +1,10 @@
 package nl.jkva.flash_xebium.commands;
 
-@Deprecated
 public class NameStartWithClickCommand extends BaseFlashCommand {
     @Override
-    protected String getScript(String locator, String value) {
-        throw new UnsupportedOperationException("Not yet supported");
+
+    protected String getScript(String objNamePattern, String objIdx) {
+        return String.format("return window.FlashSelenium.flashObjNameStartWithClick('%s','%s');", objNamePattern, objIdx);
     }
+
 }

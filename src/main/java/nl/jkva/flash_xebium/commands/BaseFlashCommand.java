@@ -1,10 +1,11 @@
 package nl.jkva.flash_xebium.commands;
 
-import com.thoughtworks.selenium.webdriven.SeleneseCommand;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.thoughtworks.selenium.webdriven.SeleneseCommand;
 
 public abstract class BaseFlashCommand extends SeleneseCommand<String> {
 
@@ -118,6 +119,32 @@ public abstract class BaseFlashCommand extends SeleneseCommand<String> {
             "      }\n" +
             "    };\n" +
             "    \n" +
+            "    self.flashObjNameStartWithClick = function (ObjNamePattern, objIdx) {\n" +
+            "      var ObjList = self.getFlashObject().list(); \n " +
+            "      var ObjNameArr = []; \n " +
+            "      var ObjNameList = JSON.parse(JSON.stringify(ObjList)); \n " +
+            "      var ObjNameArr = []; \n " +
+            "      for (var prop in ObjNameList) { \n " +
+            " 		   ObjNameArr.push(ObjNameList[prop]); \n " +
+            "      } \n " +
+            "      var nrObjs = ObjNameArr.length; \n " +
+            "      var ObjName; \n " +
+            "      var arrIdx = 0; \n " +
+            "      var matchCounter = 0; \n " +
+            "      var notFound = true; \n " +
+            "      while (arrIdx < nrObjs && notFound) { \n " +
+            "        ObjName = ObjNameArr[arrIdx]; \n " +
+            "        if (ObjName.startsWith (ObjNamePattern)) { \n " +
+            "           matchCounter = matchCounter + 1;\n " +
+            "           if (matchCounter == objIdx) { \n " +
+            "              notFound = false; \n " +
+            "              this.clickByName(ObjName);\n"+
+            "           } \n " +
+            "        } \n " +
+            "        arrIdx = arrIdx + 1; \n " +
+            "      } \n " +
+            "    };\n" +
+            "    \n" +
             "    return {\n" +
             "      errors: self.errors,\n" +
             "      addError: self.addError,\n" +
@@ -125,13 +152,13 @@ public abstract class BaseFlashCommand extends SeleneseCommand<String> {
             "      getFlashObjectId: self.getFlashObjectId,\n" +
             "      setFlashObjectId: self.setFlashObjectId,\n" +
             "      findObjectId: self.findObjectId,\n" +
-            "      verifyObjectPresent: self.verifyObjectPresent,\n" +
             "      storeObjectPresent: self.storeObjectPresent,\n" +
             "      clickByName: self.clickByName,\n" +
             "      clickById: self.clickById,\n" +
             "      dragAndDrop: self.dragAndDrop,\n" +
             "      enterText: self.enterText,\n" +
-            "      verifyText: self.verifyText\n" +
+            "      verifyText: self.verifyText, \n" +
+            "      flashObjNameStartWithClick: self.flashObjNameStartWithClick\n" +
             "    }\n" +
             "  })(document);\n" +
             "}\n";
