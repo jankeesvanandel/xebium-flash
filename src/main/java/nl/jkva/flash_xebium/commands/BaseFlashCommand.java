@@ -129,16 +129,18 @@ public abstract class BaseFlashCommand extends SeleneseCommand<String> {
             "      } \n " +
             "      var nrObjs = ObjNameArr.length; \n " +
             "      var ObjName; \n " +
+            "      var startName; \n " +
             "      var arrIdx = 0; \n " +
             "      var matchCounter = 0; \n " +
             "      var notFound = true; \n " +
             "      while (arrIdx < nrObjs && notFound) { \n " +
             "        ObjName = ObjNameArr[arrIdx]; \n " +
-            "        if (ObjName.startsWith (ObjNamePattern)) { \n " +
+            "        startName = ObjName.substring(0, ObjNamePattern.length); \n" +
+            "        if (startName == ObjNamePattern ) { \n " +
             "           matchCounter = matchCounter + 1;\n " +
             "           if (matchCounter == objIdx) { \n " +
             "              notFound = false; \n " +
-            "              this.clickByName(ObjName);\n"+
+            "              self.clickByName(ObjName);\n"+
             "           } \n " +
             "        } \n " +
             "        arrIdx = arrIdx + 1; \n " +
