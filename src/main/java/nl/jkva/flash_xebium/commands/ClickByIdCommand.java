@@ -4,7 +4,7 @@ public class ClickByIdCommand extends BaseFlashCommand {
 
     @Override
     protected String getScript(String objectId, String notUsed) {
-        return "window.FlashSelenium.clickById('" + objectId + "');";
+        return "return window.FlashSelenium.clickById('" + objectId + "');";
     }
 
 }

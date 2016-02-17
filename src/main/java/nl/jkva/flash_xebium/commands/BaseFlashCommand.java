@@ -78,8 +78,8 @@ public abstract class BaseFlashCommand extends SeleneseCommand<String> {
             "    };\n" +
             "    \n" +
             "    self.dragAndDrop = function (dragFromName, dropOnName) {\n" +
-            "      var dragFromId = self.getFlashObjectId(dragFromName);\n" +
-            "      var dropOnId = self.getFlashObjectId(dropOnName);\n" +
+            "      var dragFromId = self.findObjectId(dragFromName);\n" +
+            "      var dropOnId = self.findObjectId(dropOnName);\n" +
             "      if (dragFromId > 0 && dropOnId > 0) {\n" +
             "        self.getFlashObject().dropOn(dragFromId, dropOnId);\n" +
             "        return true;\n" +
